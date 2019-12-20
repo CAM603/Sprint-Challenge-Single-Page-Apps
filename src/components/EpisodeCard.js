@@ -1,12 +1,18 @@
 import React from 'react';
+import { Card, Button, CardHeader, CardFooter, CardBody,
+    CardTitle, CardText } from 'reactstrap';
 
 export default function EpisodeCard({episode}) {
     console.log(episode)
     return (
         <div>
-            <h1>{episode.name}</h1>
-            <h2>{episode.episode}</h2>
-            <h2>{episode.air_date}</h2>
+            <Card>
+                <CardHeader>{episode.name}</CardHeader>
+                <CardBody>
+                    <CardText>{episode.episode}</CardText>
+                    <CardText>{episode.air_date}</CardText>
+                </CardBody>
+            </Card>
         </div>
     )
 }

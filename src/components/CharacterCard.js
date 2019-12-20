@@ -1,13 +1,19 @@
 import React from "react";
+import { Card, CardBody, Button, CardTitle, CardText, CardImg } from 'reactstrap';
+
 
 export default function CharacterCard({character}) {
   
   return (
-    <div>
-      <h1>{character.name}</h1>
-      <img src={character.image} />
-      <h2>Status: {character.status}</h2>
-      <h2>Species: {character.species}</h2>
+    <div className="characterCard">
+      <Card>
+        <CardImg src={character.image} />
+        <CardBody>
+          <CardTitle>{character.name}</CardTitle>
+          <CardText>Status: {character.status}</CardText>
+          <CardText>Species: {character.species}</CardText>
+        </CardBody>
+      </Card>
     </div>
   )
 }

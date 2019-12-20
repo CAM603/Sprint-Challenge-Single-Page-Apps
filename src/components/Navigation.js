@@ -5,7 +5,7 @@ import { Navbar, NavItem, Nav, NavbarText } from 'reactstrap';
 
 export default function Navigation() {
     return (
-        <Navbar>
+        <Navbar color="dark">
             <Nav>
                 <NavItem>
                     <Link to="/">
