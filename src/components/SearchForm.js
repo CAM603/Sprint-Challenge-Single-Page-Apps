@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
-export default function SearchForm({searchCharacter, searchEpisode}) {
+export default function SearchForm({searchCharacter, searchEpisode, searchLocation}) {
   const [name, setName] = useState({
     name: ''
   })
-
+  
   const submit = event => {
     event.preventDefault();
-    searchCharacter(name.name)
+
+    return searchEpisode ? searchEpisode(name.name) 
+    : searchCharacter ? searchCharacter(name.name)
+    : searchLocation ? searchLocation(name.name)
+    : null;
   }
   const handleChange = event => {
     setName({[event.target.name]: event.target.value})
