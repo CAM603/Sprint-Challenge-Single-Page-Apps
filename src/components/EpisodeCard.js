@@ -5,7 +5,7 @@ import { Card, Button, CardHeader, CardFooter, CardBody,
 export default function EpisodeCard({episode}) {
     console.log(episode)
     return (
-        <div>
+        <div className="episode-card">
             <Card>
                 <CardHeader>{episode.name}</CardHeader>
                 <CardBody>

@@ -4,7 +4,7 @@ import { Card, Button, CardHeader, CardFooter, CardBody,
 
 export default function LocationCard({ location }) {
   return (
-    <div>
+    <div className="location-card">
       <Card>
         <CardHeader>{location.name}</CardHeader>
         <CardBody>

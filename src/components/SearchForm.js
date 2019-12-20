@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
-export default function SearchForm({searchCharacter}) {
+export default function SearchForm({searchCharacter, searchEpisode}) {
   const [name, setName] = useState({
     name: ''
   })

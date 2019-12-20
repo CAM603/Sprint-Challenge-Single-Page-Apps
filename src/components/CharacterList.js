@@ -23,15 +23,16 @@ export default function CharacterList() {
   }, [character]);
 
   return (
-    <>
+    <div>
+      <h1 className="title">Characters</h1>
       <SearchForm
       searchCharacter={searchCharacter}
       />
-    <section className="character-list">
+      <section className="character-list">
       {characters.map(character => (
         <CharacterCard key={character.id} character={character} />
       ))}
     </section>
-    </>
+    </div>
   );
 }

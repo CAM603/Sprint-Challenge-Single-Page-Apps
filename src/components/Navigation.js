@@ -8,28 +8,28 @@ export default function Navigation() {
         <Navbar color="dark">
             <Nav>
                 <NavItem>
-                    <Link to="/">
+                    <Link className="link" to="/">
                         <NavbarText>Home</NavbarText>
                     </Link> 
                 </NavItem>
             </Nav>
             <Nav>
                 <NavItem>
-                    <Link to="/characters">
+                    <Link className="link" to="/characters">
                     <NavbarText>Characters</NavbarText>
                     </Link>
                 </NavItem>
             </Nav>
             <Nav>
                 <NavItem>
-                    <Link to="/locations">
+                    <Link className="link" to="/locations">
                     <NavbarText>Locations</NavbarText>
                     </Link>
                 </NavItem>
             </Nav>
             <Nav>
                 <NavItem>
-                    <Link to="/episodes">
+                    <Link className="link" to="/episodes">
                     <NavbarText>Episodes</NavbarText>
                     </Link>
                 </NavItem>

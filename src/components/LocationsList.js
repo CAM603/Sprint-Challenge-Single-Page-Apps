@@ -16,11 +16,13 @@ export default function LocationsList() {
         .catch(error => console.log(error))
     }, [location])
     return (
-        <section>
-            <h1>Locations</h1>
+        <div>
+            <h1 className="title">Locations</h1>
+            <section className="location-list">
             {locations.map(location => (
                 <LocationCard key={location.id} location={location}/>
             ))}
         </section>
+        </div>
     )
 }
