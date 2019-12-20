@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// Styles
 import { Navbar, NavItem, Nav, NavbarText } from 'reactstrap';
 
 export default function Navigation() {

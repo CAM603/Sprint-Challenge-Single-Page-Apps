@@ -1,5 +1,7 @@
 import React from "react";
-import { Card, CardBody, Button, CardTitle, CardText, CardImg } from 'reactstrap';
+
+// Styles
+import { Card, CardBody, CardTitle, CardText, CardImg } from 'reactstrap';
 
 
 export default function CharacterCard({character}) {

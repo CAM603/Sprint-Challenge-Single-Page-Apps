@@ -1,5 +1,7 @@
 import React from "react";
-import { Jumbotron, Button } from 'reactstrap';
+
+// Styles
+import { Jumbotron } from 'reactstrap';
 
 export default function WelcomePage() {
   return (

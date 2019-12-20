@@ -1,6 +1,7 @@
 import React from 'react';
-import { Card, Button, CardHeader, CardFooter, CardBody,
-    CardTitle, CardText } from 'reactstrap';
+
+// Style
+import { Card, CardHeader, CardBody, CardText } from 'reactstrap';
 
 export default function EpisodeCard({episode}) {
     console.log(episode)

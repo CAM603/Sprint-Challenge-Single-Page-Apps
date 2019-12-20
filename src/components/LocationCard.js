@@ -1,8 +1,10 @@
 import React from "react";
-import { Card, Button, CardHeader, CardFooter, CardBody,
-  CardTitle, CardText } from 'reactstrap';
+
+// Styles
+import { Card, CardHeader, CardBody, CardText } from 'reactstrap';
 
 export default function LocationCard({ location }) {
+  
   return (
     <div className="location-card">
       <Card>
