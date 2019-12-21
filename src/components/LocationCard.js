@@ -1,5 +1,19 @@
 import React from "react";
 
-export default function LocationCard({ name, type, dimension, residents }) {
-  return <span>todo: location</span>;
+// Styles
+import { Card, CardHeader, CardBody, CardText } from 'reactstrap';
+
+export default function LocationCard({ location }) {
+  
+  return (
+    <div className="location-card">
+      <Card>
+        <CardHeader>{location.name}</CardHeader>
+        <CardBody>
+          <CardText>{location.type}</CardText>
+          <CardText>{location.dimension}</CardText>
+        </CardBody>
+      </Card>
+    </div>
+  );
 }
