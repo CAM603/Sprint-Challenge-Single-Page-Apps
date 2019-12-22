@@ -8,10 +8,10 @@ export default function LocationCard({ location }) {
   return (
     <div className="location-card">
       <Card>
-        <CardHeader>{location.name}</CardHeader>
+        <CardHeader>Location: {location.name}</CardHeader>
         <CardBody>
-          <CardText>{location.type}</CardText>
-          <CardText>{location.dimension}</CardText>
+          <CardText>Type: {location.type}</CardText>
+          <CardText>Dimension: {location.dimension}</CardText>
         </CardBody>
       </Card>
     </div>

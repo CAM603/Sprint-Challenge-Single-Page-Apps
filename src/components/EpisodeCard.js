@@ -8,10 +8,10 @@ export default function EpisodeCard({episode}) {
     return (
         <div className="episode-card">
             <Card>
-                <CardHeader>{episode.name}</CardHeader>
+                <CardHeader>Name: {episode.name}</CardHeader>
                 <CardBody>
-                    <CardText>{episode.episode}</CardText>
-                    <CardText>{episode.air_date}</CardText>
+                    <CardText>Episode: {episode.episode}</CardText>
+                    <CardText>Air Date: {episode.air_date}</CardText>
                 </CardBody>
             </Card>
         </div>
