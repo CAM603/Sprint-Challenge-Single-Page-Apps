@@ -31,7 +31,7 @@ export default function CharacterList() {
       cancelToken: new axios.CancelToken(c => cancel = c)
     })
     .then(response => {
-      console.log(response.data.info.next)
+      console.log(response)
       setLoading(false)
       setCharacters(response.data.results)
     })
