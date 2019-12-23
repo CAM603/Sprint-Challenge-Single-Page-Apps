@@ -40,7 +40,10 @@ header h1 {
   text-align: center;
   font-size: 4rem;
 }
-
+.characterContainer {
+  display: flex;
+  justify-content: center;
+}
 .characterCard {
   width: 300px;
   margin: 5px;

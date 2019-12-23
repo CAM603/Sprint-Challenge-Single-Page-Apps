@@ -1,6 +1,11 @@
 import React, { useEffect, useState} from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+// Styles
+import {
+    Card, CardImg, CardText, CardBody, CardHeader,
+    Button
+} from 'reactstrap';
 
 export default function Character() {
     
@@ -9,6 +14,7 @@ export default function Character() {
     const [character, setCharacter] = useState([]);
     const [origin, setOrigin] = useState([]);
     const [location, setLocation] = useState([]);
+    const [episodes, setEpisodes] = useState([]);
 
     const {id} = useParams();
 
@@ -25,7 +31,8 @@ export default function Character() {
             setLoading(false)
             setCharacter(response.data);
             setOrigin(response.data.origin);
-            setLocation(response.data.location)
+            setLocation(response.data.location);
+            setEpisodes(response.data.episode);
             
         })
         .catch(error => console.log(error))
@@ -37,14 +44,28 @@ export default function Character() {
         if (loading) return 'Loading...'
 
     return (
-        <div>
-            <h1>{character.name}</h1>
-            <h3>{character.status}</h3>
-            <h3>{character.species}</h3>
-            <h3>{character.type}</h3>
-            <h3>{character.gender}</h3>
-            <h3>{origin.name}</h3>
-            <h3>{location.name}</h3>
+        <div className="characterContainer">
+            <div className="characterCard" style={{width : '400px'}}>
+                <Card body className="text-center" >
+                    <CardHeader>
+                        <h1>{character.name}</h1>
+                    </CardHeader>
+                    <CardImg src={character.image}/>
+                    <CardBody>
+                        <CardText>Status: {character.status}</CardText>
+                        <CardText>Species: {character.species}</CardText>
+                        <CardText>Gender: {character.gender}</CardText>
+                        <CardText>Species: {character.species}</CardText>
+                        <CardText>Origin: {origin.name}</CardText>
+                        <CardText>Location: {location.name}</CardText>
+                        <CardText>Appears in: {episodes.length} episodes</CardText>
+                        <Link to="/characters">
+                            <Button color="success">Back</Button>
+                        </Link>
+                    </CardBody>
+
+                </Card>
+            </div>
         </div>
     )
 }
