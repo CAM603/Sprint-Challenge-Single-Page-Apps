@@ -1,10 +1,10 @@
 import React, { useEffect, useState} from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 // Styles
 import {
     Card, CardImg, CardText, CardBody, CardHeader,
-    CardTitle, CardSubtitle
+    Button
 } from 'reactstrap';
 
 export default function Character() {
@@ -45,7 +45,7 @@ export default function Character() {
 
     return (
         <div className="characterContainer">
-            <div className="characterCard">
+            <div className="characterCard" style={{width : '400px'}}>
                 <Card body className="text-center" >
                     <CardHeader>
                         <h1>{character.name}</h1>
@@ -59,6 +59,9 @@ export default function Character() {
                         <CardText>Origin: {origin.name}</CardText>
                         <CardText>Location: {location.name}</CardText>
                         <CardText>Appears in: {episodes.length} episodes</CardText>
+                        <Link to="/characters">
+                            <Button color="success">Back</Button>
+                        </Link>
                     </CardBody>
 
                 </Card>
