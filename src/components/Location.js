@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 
 // Styles
-import { Card, CardBody, CardTitle, CardText, CardHeader, Button } from 'reactstrap';
+import { Card, CardBody, CardText, CardHeader, Button } from 'reactstrap';
 
 export default function Location() {
 
