@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
+
+// Styles
+import { Card, CardBody, CardTitle, CardText, CardHeader, Button } from 'reactstrap';
 
 export default function Location() {
 
     // Set state for loading
     const [loading, setLoading] = useState(true);
     const [location, setLocation] = useState([]);
+    const [residents, setResidents] = useState([])
     
 
     const {id} = useParams();
@@ -22,9 +26,8 @@ export default function Location() {
         .then(response => {
             console.log(response.data);
             setLoading(false)
-            setLocation(response.data)
-            
-            
+            setLocation(response.data);
+            setResidents(response.data.residents)
         })
         .catch(error => console.log(error))
         // Cleanup function
@@ -35,6 +38,22 @@ export default function Location() {
         if (loading) return 'Loading...'
 
     return (
-        <div>Location</div>
+        <div className="characterContainer">
+            <div className="characterCard" style={{width : '400px'}}>
+                <Card className="text-center" >
+                    <CardHeader>
+                        <h1>{location.name}</h1>
+                    </CardHeader>
+                    <CardBody>
+                        <CardText>Type: {location.type}</CardText>
+                        <CardText>Dimension: {location.dimension}</CardText>
+                        <CardText>Residents: {residents.length}</CardText>
+                        <Link to="/locations">
+                            <Button color="success">Back</Button>
+                        </Link>
+                    </CardBody>
+                </Card>
+            </div>
+        </div>
     )
 }
