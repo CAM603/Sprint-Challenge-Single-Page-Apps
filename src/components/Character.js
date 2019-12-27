@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
+import Loading from './Loading';
 // Styles
 import {
     Card, CardImg, CardText, CardBody, CardHeader,
@@ -41,7 +42,7 @@ export default function Character() {
     
     }, [id]);
     
-        if (loading) return 'Loading...'
+        if (loading) return <Loading/>
 
     return (
         <div className="characterContainer">
@@ -60,7 +61,7 @@ export default function Character() {
                         <CardText>Location: {location.name}</CardText>
                         <CardText>Appears in: {episodes.length} episodes</CardText>
                         <Link to="/characters">
-                            <Button color="success">Back</Button>
+                            <Button color="danger">Back</Button>
                         </Link>
                     </CardBody>
 

@@ -1,6 +1,12 @@
 import React, { useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from'axios';
+import Loading from './Loading';
+// Styles
+import {
+    Card, CardText, CardBody, CardHeader,
+    Button
+} from 'reactstrap';
 
 export default function Episode() {
 
@@ -23,7 +29,8 @@ export default function Episode() {
         .then(response => {
             console.log(response.data);
             setLoading(false);
-            setEpisode(response.data)
+            setEpisode(response.data);
+            setCharacters(response.data.characters)
             
         })
         .catch(error => console.log(error))
@@ -32,13 +39,27 @@ export default function Episode() {
     
     }, [id]);
     
-        if (loading) return 'Loading...'
+        if (loading) return <Loading />
     return (
-        <div>
-            <h1>{episode.name}</h1>
-            <h1>{episode.episode}</h1>
-            <h1>{episode.air_date}</h1>
-            <h1>{}</h1>
+        <div className="characterContainer">
+            <div className="characterCard" style={{width : '400px'}}>
+                <Card className="text-center">
+                    <CardHeader>
+                        <h1>{episode.name}</h1>
+                    </CardHeader>
+                    
+                    <CardBody>
+                        <CardText>Status: {episode.name}</CardText>
+                        <CardText>Species: {episode.episode}</CardText>
+                        <CardText>Gender: {episode.air_date}</CardText>
+                        <CardText>Characters in episode: {characters.length}</CardText>
+                        <Link to="/characters">
+                            <Button color="danger">Back</Button>
+                        </Link>
+                    </CardBody>
+
+                </Card>
+            </div>
         </div>
     )
 }

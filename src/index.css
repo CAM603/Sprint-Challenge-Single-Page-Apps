@@ -89,3 +89,9 @@ header h1 {
 .link:hover {
   color: #97ce4c;
 }
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

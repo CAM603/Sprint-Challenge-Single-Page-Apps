@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import Loading from './Loading';
 
 //Components
 import CharacterCard from "./CharacterCard";
@@ -41,7 +42,7 @@ export default function CharacterList() {
 
   }, [character]);
 
-  if (loading) return 'Loading...'
+  if (loading) return <Loading/>
 
   return (
 

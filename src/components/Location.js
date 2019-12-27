@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
+import Loading from './Loading';
 
 // Styles
 import { Card, CardBody, CardText, CardHeader, Button } from 'reactstrap';
@@ -35,7 +36,8 @@ export default function Location() {
     
     }, [id]);
     
-        if (loading) return 'Loading...'
+        if (loading) return <Loading />
+
 
     return (
         <div className="characterContainer">
@@ -49,7 +51,7 @@ export default function Location() {
                         <CardText>Dimension: {location.dimension}</CardText>
                         <CardText>Residents: {residents.length}</CardText>
                         <Link to="/locations">
-                            <Button color="success">Back</Button>
+                            <Button color="danger">Back</Button>
                         </Link>
                     </CardBody>
                 </Card>
