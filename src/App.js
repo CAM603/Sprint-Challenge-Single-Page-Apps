@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import LocationList from "./components/LocationsList";
 import EpisodeList from "./components/EpisodeList";
 import Character from "./components/Character";
+import Location from "./components/Location";
 
 import { Route } from 'react-router-dom';
 
@@ -26,8 +27,11 @@ export default function App() {
       <Route path="/characters/:id">
         <Character/>
       </Route>
-      <Route path="/locations">
+      <Route exact path="/locations">
         <LocationList/>
+      </Route>
+      <Route path="/locations/:id">
+        <Location/>
       </Route>
       <Route path="/episodes">
         <EpisodeList />
