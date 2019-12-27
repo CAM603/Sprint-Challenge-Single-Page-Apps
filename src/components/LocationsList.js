@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import Loading from './Loading';
 
 // Components
 import LocationCard from "./LocationCard";
@@ -11,6 +12,8 @@ export default function LocationsList() {
     const [locations, setLocations] = useState([])
     // Set state for specific location
     const [location, setLocation] = useState('')
+    // Set state for loading
+    const [loading, setLoading] = useState(true)
 
     // Function to set specific location
     const searchLocation = (location) => {
@@ -18,14 +21,21 @@ export default function LocationsList() {
     }
 
     useEffect(() => {
+        setLoading(true)
+        let cancel
         axios
-        .get(`https://rickandmortyapi.com/api/location/?name=${location}`)
+        .get(`https://rickandmortyapi.com/api/location/?name=${location}`, {cancelToken: new axios.CancelToken(c => cancel = c)})
         .then(response => {
-            console.log(response.data.results)
+            setLoading(false)
             setLocations(response.data.results)
         })
         .catch(error => console.log(error))
+        // Cleanup function
+        return () => cancel()
+
     }, [location])
+
+    if (loading) return <Loading/>
     
     return (
         <div>
